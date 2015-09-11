@@ -1,0 +1,25 @@
+language: python
+python:
+  - 2.7
+
+services: mysql
+
+addons:
+  apt:
+    packages: unzip
+
+# before_install: sudo apt-get update -qq
+
+# command to install dependencies
+install: "pip install -r requirements.txt"
+
+before_script:
+  - "mysql -e 'create database testdb;'"
+  - "wget http://web2py.com/examples/static/web2py_src.zip -O /tmp/web2py_src.zip"
+  - "ls"
+
+script: nosetests
+
+# to use container-based infrastructure. Faster build setup
+# change false to required to use sudo
+sudo: false
