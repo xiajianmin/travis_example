@@ -8,7 +8,7 @@ from gluon.custom_import import track_changes
 track_changes(True)
 
 from gluon.tools import *
-auth = Auth(yaodb)
+auth = Auth(db)
 # from custom_validators import PASSWORD
 # from helper import check_password_expires, delete_extra_user_sessions
 # from user_helper import get_user_fullname
