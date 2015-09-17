@@ -28,7 +28,7 @@ class PersonTest(unittest.TestCase):
 	def testShowPerson(self):
 		print ("\n === START TEST SHOW PERSON ===\n")
 
-		request.args[0] = 1
+		request.args = [1]
 
 		request.function = 'show'
 		resp = show()
@@ -43,7 +43,7 @@ class PersonTest(unittest.TestCase):
 		request.function = 'get_person_count'
 		resp = get_person_count()
 
-		print ('count: ' + resp)
+		print ('count: ' + str(resp))
 
 		new_person = {'first_name': 'JANE',
 		'last_name': 'DOE',
@@ -60,7 +60,7 @@ class PersonTest(unittest.TestCase):
 		request.function = 'get_person_count'
 		resp = get_person_count()
 
-		print ('count: ' + resp)
+		print ('count: ' + str(resp))
 
 		print ("\n === END TEST ADD PERSON ===\n")
 
@@ -85,6 +85,6 @@ class PersonTest(unittest.TestCase):
 		request.function = 'get_person_count'
 		resp = get_person_count()
 
-		print ('count: ' + resp)
+		print ('count: ' + str(resp))
 
 		print ("\n === END TEST EDIT PERSON ===\n")
