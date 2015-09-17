@@ -20,7 +20,7 @@ class PersonTest(unittest.TestCase):
 		global response, session, request, auth
 		session = pickle.loads(self.session)
 
-		auth = Auth(globals(), yaodb)
+		auth = Auth(globals(), db)
 		auth.define_tables()
 
 		print ("\n === SETUP TEST END ===\n")
