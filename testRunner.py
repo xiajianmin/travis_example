@@ -42,10 +42,8 @@ for test_file in test_files:
 	g = copy(globals())
 	execfile(test_file, g)
 
-	print test_file
-
 	# take filename only
-	filename = test_file.split('applications/travis_example/tests\\')[1]
+	filename = test_file.split('applications/travis_example/tests/')[1]
 	# take out extension
 	ext = filename[-3:]
 	filename = filename[:-3]
