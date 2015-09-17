@@ -28,10 +28,11 @@ class PersonTest(unittest.TestCase):
 	def testShowPerson(self):
 		print ("\n === START TEST SHOW PERSON ===\n")
 
-		request.function = 'show'
 		request.args[0] = 1
 
+		request.function = 'show'
 		resp = show()
+
 		print resp
 
 		print ("\n === END TEST SHOW PERSON ===\n")
