@@ -1,5 +1,5 @@
 # original construction for db
-yaodb = DAL('mysql://root:@127.0.0.1/testdb', lazy_tables=False, migrate=False)
+db = DAL('mysql://root:@127.0.0.1/testdb', lazy_tables=False, migrate=False)
 #DAL.define_table
 import datetime
 import time
@@ -27,3 +27,18 @@ mail = Mail()
 # mail = auth.settings.mailer
 mail.settings.server = 'smtp.gmail.com:587'
 auth.settings.mailer = mail
+
+db.define_table('person',
+	Field('first_name'),
+	Field('middle_initial'),
+	Field('last_name'),
+	Field('dob', 'date'),
+	Field('sex'),
+	Field('race'),
+	Field('height'),
+	Field('weight'),
+	Field('address'),
+	Field('city'),
+	Field('state'),
+	Field('zip')
+	)
