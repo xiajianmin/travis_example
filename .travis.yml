@@ -23,7 +23,7 @@ before_script:
   # copy application from github to applications/app_name
   - "mkdir web2py/applications/travis_example"
   - 'for file in "./"*; do [[ $file = ./web2py ]] && continue; cp -r "$file" "./web2py/applications/travis_example"; done'
-  - 'cd web2py/applications/travis_example'
+  - 'cd web2py'
 
 script: python web2py.py -S travis_example -M -R applications/travis_example/testRunner.py
 
