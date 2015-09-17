@@ -15,15 +15,15 @@ services: mysql
 
 before_script:
   # create database and run script to create tables
-  - "mysql -e 'create database testdb;'"
-  - "mysql testdb < web2py_auth_script.sql"
+  - 'mysql -e "create database testdb;"'
+  - 'mysql testdb < web2py_auth_script.sql'
   # download web2py
-  - "wget http://web2py.com/examples/static/web2py_src.zip -O /tmp/web2py_src.zip"
-  - "unzip /tmp/web2py_src.zip"
+  - 'wget http://web2py.com/examples/static/web2py_src.zip -O /tmp/web2py_src.zip'
+  - 'unzip /tmp/web2py_src.zip'
   # copy application from github to applications/app_name
   - "mkdir web2py/applications/travis_example"
-  - "for file in './'*; do [[ $file = ./web2py ]] && continue; cp -r '$file' './web2py/applications/travis_example'; done"
-  - "cd web2py/applications/travis_example"
+  - 'for file in "./"*; do [[ $file = ./web2py ]] && continue; cp -r "$file" "./web2py/applications/travis_example"; done'
+  - 'cd web2py/applications/travis_example'
 
 script: python web2py.py -S travis_example -M -R applications/travis_example/testRunner.py
 
