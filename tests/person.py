@@ -9,8 +9,6 @@ class PersonTest(unittest.TestCase):
 		print ("\n === INIT TEST ===\n")
 		global auth, session, request
 		unittest.TestCase.__init__(self, p)
-
-		db = DAL('mysql://root:@127.0.0.1/testdb', lazy_tables=False, migrate=False)
 		
 		self.session = pickle.dumps(session)
 		request.application = 'travis_example'
