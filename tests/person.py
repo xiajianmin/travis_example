@@ -48,17 +48,17 @@ class PersonTest(unittest.TestCase):
 
 		print ('count: ' + str(resp))
 
-		# new_person = {'first_name': 'JANE',
-		# 'last_name': 'DOE',
-		# 'dob': '1980-05-12'
-		# }
+		new_person = {'first_name': 'JANE',
+		'last_name': 'DOE',
+		'dob': '1980-05-12'
+		}
 
-		# request.vars.new_person = json.dumps(new_person)
+		request.vars.new_person = json.dumps(new_person)
 
-		# request.function = 'add_person'
-		# resp = add_person()
+		request.function = 'add_person'
+		resp = add_person()
 
-		# print resp # should be 2
+		print resp # should be 2
 
 		request.function = 'get_person_count'
 		resp = get_person_count()
@@ -78,12 +78,12 @@ class PersonTest(unittest.TestCase):
 	def testDeletePerson(self):
 		print ("\n === START TEST DELETE PERSON ===\n")
 
-		# request.vars.person_id = 2
+		request.vars.person_id = 2
 
-		# request.function = 'delete_person'
-		# resp = delete_person()
+		request.function = 'delete_person'
+		resp = delete_person()
 
-		# print resp
+		print resp
 
 		request.function = 'get_person_count'
 		resp = get_person_count()
