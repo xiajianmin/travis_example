@@ -12,7 +12,7 @@ class PersonTest(unittest.TestCase):
 		self.session = pickle.dumps(session)
 		request.application = 'travis_example'
 		request.controller = "person"
-		self.request = pickle.dumps(str(request))
+		self.request = request
 		print ("\n === INIT TEST END ===\n")
 
 	def setUp(self):
