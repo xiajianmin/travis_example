@@ -36,8 +36,6 @@ doc_test_files = glob.glob('applications/travis_example/controllers/*.py')
 if not test_files and not doc_test_files:
     raise Exception("No files found for app: travis_example")
 
-db = DAL('mysql://root:@127.0.0.1/testdb', lazy_tables=False, migrate=False)
-
 # Bring all unit tests in and their controllers/models/whatever
 for test_file in test_files:
 	g = copy(globals())

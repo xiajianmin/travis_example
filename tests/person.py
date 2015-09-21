@@ -13,6 +13,9 @@ class PersonTest(unittest.TestCase):
 		request.application = 'travis_example'
 		request.controller = "person"
 		self.request = request
+
+		db = DAL('mysql://root:@127.0.0.1/testdb', lazy_tables=False, migrate=False)
+		
 		print ("\n === INIT TEST END ===\n")
 
 	def setUp(self):
@@ -74,7 +77,7 @@ class PersonTest(unittest.TestCase):
 		print ("\n === END TEST EDIT PERSON ===\n")
 
 	def testDeletePerson(self):
-		print ("\n === START TEST EDIT PERSON ===\n")
+		print ("\n === START TEST DELETE PERSON ===\n")
 
 		# request.vars.person_id = 2
 
@@ -88,4 +91,4 @@ class PersonTest(unittest.TestCase):
 
 		print ('count: ' + str(resp))
 
-		print ("\n === END TEST EDIT PERSON ===\n")
+		print ("\n === END TEST DELETE PERSON ===\n")
