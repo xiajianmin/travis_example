@@ -1,6 +1,5 @@
 # original construction for db
-db =  DAL('mysql://q1:password@quicket.c3dyh5j7fckw.us-gov-west-1.rds.amazonaws.com/quickdb', lazy_tables=False, migrate=False)
-#DAL.define_table
+db = DAL('mysql://root:@127.0.0.1/testdb', lazy_tables=False, migrate=False)
 import datetime
 import time
 
