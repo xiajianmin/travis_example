@@ -1,10 +1,10 @@
+# original construction for db
+db = DAL('sqlite://testing.sqlite')
+
 #DAL.define_table
 import datetime
 import time
 import os
-
-# original construction for db
-db = DAL('sqlite://testing.sqlite')
 
 if os.getenv('WEB2PY_USE_DB_TESTING'):
 	db = DAL('mysql://root:@127.0.0.1/testdb', lazy_tables=False, migrate=False)
