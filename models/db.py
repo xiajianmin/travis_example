@@ -7,6 +7,7 @@ import time
 import os
 
 if os.getenv('WEB2PY_USE_DB_TESTING'):
+	print "\n\n USING TEST DB \n\n"
 	db = DAL('mysql://root:@127.0.0.1/testdb', lazy_tables=False, migrate=False)
 
 from gluon.custom_import import track_changes
