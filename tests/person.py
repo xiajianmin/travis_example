@@ -9,7 +9,9 @@ class PersonTest(unittest.TestCase):
 		print ("\n === INIT TEST ===\n")
 		global auth, session, request
 		unittest.TestCase.__init__(self, p)
-		
+
+		os.environ["WEB2PY_USE_DB_TESTING"]= "1"
+
 		self.session = pickle.dumps(session)
 		request.application = 'travis_example'
 		request.controller = "person"

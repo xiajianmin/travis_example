@@ -25,6 +25,7 @@ REF: http://www.web2pyslices.com/slice/show/1392/unit-testing
 import unittest
 import glob
 import sys
+import os
 import doctest
 
 suite = unittest.TestSuite()
@@ -35,6 +36,9 @@ doc_test_files = glob.glob('applications/travis_example/controllers/*.py')
 
 if not test_files and not doc_test_files:
     raise Exception("No files found for app: travis_example")
+
+# setup web2py environment as true
+os.environ["WEB2PY_USE_DB_TESTING"]= "1"
 
 # Bring all unit tests in and their controllers/models/whatever
 for test_file in test_files:
