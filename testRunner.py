@@ -38,7 +38,11 @@ if not test_files and not doc_test_files:
     raise Exception("No files found for app: travis_example")
 
 # setup web2py environment as true
-os.environ["WEB2PY_USE_DB_TESTING"]= "1"
+os.environ["WEB2PY_USE_DB_TESTING"] = "1"
+
+# re-exec db.py to use test database
+db_file = 'applications/test_production/models/db.py'
+execfile(db_file, globals())
 
 # Bring all unit tests in and their controllers/models/whatever
 for test_file in test_files:
