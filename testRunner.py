@@ -41,7 +41,7 @@ if not test_files and not doc_test_files:
 os.environ["WEB2PY_USE_DB_TESTING"] = "1"
 
 # re-exec db.py to use test database
-db_file = 'applications/test_production/models/db.py'
+db_file = 'applications/travis_example/models/db.py'
 execfile(db_file, globals())
 
 # Bring all unit tests in and their controllers/models/whatever
