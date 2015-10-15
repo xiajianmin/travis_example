@@ -14,6 +14,9 @@ addons:
 # install: "pip install -r requirements.txt"
 
 before_script:
+  - 'python -c "from reportlab.pdfgen import canvas"'
+  - 'echo $?'
+
   # create database and run script to create tables
   - 'mysql -e "create database testdb;"'
   - 'mysql testdb < web2py_auth_script.sql'
