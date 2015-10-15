@@ -25,6 +25,7 @@ before_script:
   - 'ls'
   - 'cd dist-packages'
   - 'ls -l'
+  - 'sudo chmod -R 777 reportlab'
   - 'cd reportlab'
   - 'ls -l'
 
