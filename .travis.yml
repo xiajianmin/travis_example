@@ -17,8 +17,8 @@ before_install:
 # install: "pip install -r requirements.txt"
 
 before_script:
-  - 'search / -name xiajianmin -type d'
-  - 'search / -name python2.7 -type d'
+  - 'pwd'
+  - 'find / -name python2.7 -type d'
 
   - 'python -c "from reportlab.pdfgen import canvas"'
   - 'echo $?'
