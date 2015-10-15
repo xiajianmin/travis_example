@@ -10,14 +10,12 @@ services: mysql
 
 before_install:
   - sudo pip install reportlab
-  # - sudo apt-get install python-reportlab
   - sudo apt-get update -qq
 
 # command to install dependencies
 # install: "pip install -r requirements.txt"
 
 before_script:
-  - 'find / -name reportlab'
   - 'pwd'
   - 'cd ../../../../..'
   - 'ls'
