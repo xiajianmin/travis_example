@@ -6,19 +6,19 @@ services: mysql
 
 # addons:
 #   apt:
-#     packages: python-reportlab
+#     packages: reportlab
 
 before_install:
-  - sudo pip install reportlab
   - sudo apt-get update -qq
-
-  - 'sudo python -c "from reportlab.pdfgen import canvas"'
-  - 'sudo echo $?'
+  - sudo apt-file -l search reportlab
 
 # command to install dependencies
 # install: "pip install -r requirements.txt"
 
 before_script:
+  - 'python -c "from reportlab.pdfgen import canvas"'
+  - 'echo $?'
+
   # create database and run script to create tables
   - 'mysql -e "create database testdb;"'
   - 'mysql testdb < web2py_auth_script.sql'
