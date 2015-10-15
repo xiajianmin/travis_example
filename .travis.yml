@@ -9,7 +9,7 @@ services: mysql
 #     packages: reportlab
 
 before_install:
-  # - sudo apt-get install python-reportlab
+  - sudo apt-get install python-reportlab
   - sudo apt-get update -qq
 
 # command to install dependencies
@@ -24,9 +24,9 @@ before_script:
   - 'cd python2.7'
   - 'ls'
   - 'cd dist-packages'
-  - 'ls'
+  - 'ls -l'
   - 'cd reportlab'
-  - 'ls'
+  - 'ls -l'
 
   - 'cd ../../../../../..'
   - 'cd home/travis/build/xiajianmin/travis_example'
