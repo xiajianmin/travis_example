@@ -1,5 +1,15 @@
 import json
 
+from reportlab.pdfgen import canvas
+from reportlab.pdfbase.pdfmetrics import stringWidth
+from reportlab.lib import colors
+from reportlab.lib.pagesizes import letter, landscape, A4
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle, getSampleStyleSheet
+from reportlab.lib.units import inch, cm, mm
+from reportlab.lib.enums import TA_JUSTIFY, TA_LEFT, TA_CENTER
+from reportlab.lib.utils import simpleSplit
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, Table, TableStyle
+
 def show():
 	person_id = request.args[0]
 
