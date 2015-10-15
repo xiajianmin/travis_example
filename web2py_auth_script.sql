@@ -196,4 +196,4 @@ CREATE TABLE `person` (
   zip varchar(10)
 );
 
-insert into person values ('JOHN', 'C', 'DOE', '1980-07-20', 'M', 'W', '5 10', '150', 'BLK', 'BRN', '1349 LINGLEY STREET', 'DREAMLAND', 'PO', '55642');
+insert into person values ('1', 'JOHN', 'C', 'DOE', '1980-07-20', 'M', 'W', '5 10', '150', 'BLK', 'BRN', '1349 LINGLEY STREET', 'DREAMLAND', 'PO', '55642');
