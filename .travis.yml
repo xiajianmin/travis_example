@@ -18,7 +18,7 @@ before_install:
 
 before_script:
   - 'ls'
-  - 'cd ../'
+  - 'cd ../../..'
   - 'ls'
   - 'cd usr/lib/python2.7'
   - 'ls'
