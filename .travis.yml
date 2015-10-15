@@ -4,13 +4,13 @@ python:
 
 services: mysql
 
-# addons:
-#   apt:
-#     packages: reportlab
+addons:
+  apt:
+    packages: python-reportlab
 
-before_install:
-  - sudo apt-get install python-reportlab
-  - sudo apt-get update -qq
+# before_install:
+#   - sudo apt-get install python-reportlab
+#   - sudo apt-get update -qq
 
 # command to install dependencies
 # install: "pip install -r requirements.txt"
@@ -25,7 +25,7 @@ before_script:
   - 'ls'
   - 'cd dist-packages'
   - 'ls -l'
-  - 'sudo chmod -R 777 reportlab'
+  - 'chmod -R 777 reportlab'
   - 'cd reportlab'
   - 'ls -l'
 
@@ -52,4 +52,4 @@ script: python web2py.py -S travis_example -M -R applications/travis_example/tes
 
 # to use container-based infrastructure. Faster build setup
 # change false to required to use sudo
-# sudo: false
+sudo: false
