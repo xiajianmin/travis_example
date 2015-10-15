@@ -18,7 +18,14 @@ before_install:
 
 before_script:
   - 'pwd'
-  - 'find / -name python2.7 -type d'
+  - 'cd ../../../../..'
+  - 'ls'
+  - 'cd usr/lib/'
+  - 'ls'
+  - 'cd python2.7'
+  - 'ls'
+  - 'cd dist-packages'
+  - 'ls'
 
   - 'python -c "from reportlab.pdfgen import canvas"'
   - 'echo $?'
