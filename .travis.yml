@@ -9,7 +9,7 @@ services: mysql
 #     packages: reportlab
 
 before_install:
-  - sudo apt-get install reportlab
+  - sudo pip install reportlab
   - sudo apt-get update -qq
 
 # command to install dependencies
