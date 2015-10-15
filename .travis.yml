@@ -26,8 +26,6 @@ before_script:
   - 'cd dist-packages'
   - 'ls -l'
 
-  - 'find / -name reportlab -type d'
-
   - 'cd ../../../../../..'
   - 'cd home/travis/build/xiajianmin/travis_example'
 
