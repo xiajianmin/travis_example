@@ -9,7 +9,7 @@ services: mysql
 #     packages: python-reportlab
 
 before_install:
-  - sudo apt-get install python-reportlab
+  - sudo pip install reportlab
   - sudo apt-get update -qq
 
   - 'sudo python -c "from reportlab.pdfgen import canvas"'
