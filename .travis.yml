@@ -4,19 +4,21 @@ python:
 
 services: mysql
 
-addons:
-  apt:
-    packages: python-reportlab
+# addons:
+#   apt:
+#     packages: python-reportlab
 
-# before_install: sudo apt-get update -qq
+before_install:
+  - sudo apt-get install python-reportlab
+  - sudo apt-get update -qq
+
+  - 'sudo python -c "from reportlab.pdfgen import canvas"'
+  - 'sudo echo $?'
 
 # command to install dependencies
 # install: "pip install -r requirements.txt"
 
 before_script:
-  - 'python -c "from reportlab.pdfgen import canvas"'
-  - 'echo $?'
-
   # create database and run script to create tables
   - 'mysql -e "create database testdb;"'
   - 'mysql testdb < web2py_auth_script.sql'
@@ -32,4 +34,4 @@ script: python web2py.py -S travis_example -M -R applications/travis_example/tes
 
 # to use container-based infrastructure. Faster build setup
 # change false to required to use sudo
-sudo: false
+# sudo: false
