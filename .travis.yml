@@ -9,28 +9,13 @@ services: mysql
 #     packages: reportlab
 
 before_install:
-  - sudo pip install reportlab
   - sudo apt-get update -qq
 
 # command to install dependencies
-# install: "pip install -r requirements.txt"
+install:
+  - sudo pip install reportlab
 
 before_script:
-  - 'pwd'
-  - 'cd ../../../../..'
-  - 'ls'
-  - 'cd usr/lib/'
-  - 'ls'
-  - 'cd python2.7'
-  - 'ls'
-  - 'cd dist-packages'
-  - 'ls -l'
-
-  - 'cd ../../../../../..'
-  - 'cd home/travis/build/xiajianmin/travis_example'
-
-  - 'python -V'
-
   - 'python -c "from reportlab.pdfgen import canvas"'
   - 'echo $?'
 
