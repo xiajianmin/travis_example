@@ -8,16 +8,19 @@ services: mysql
 #   apt:
 #     packages: reportlab
 
+virtualenv:
+    system_site_packages: true
+
 before_install:
+  - SITE_PKG_DIR=$VIRTUAL_ENV/lib/python$TRAVIS_PYTHON_VERSION/site-packages
+  - sudo rm -f $VIRTUAL_ENV/lib/python$TRAVIS_PYTHON_VERSION/no-global-site-packages.txt
   - sudo apt-get update -qq
 
 # command to install dependencies
 install:
-  - sudo pip install reportlab
+  - sudo apt-get install python-reportlab
 
 before_script:
-  - 'python setup.py develop'
-
   - 'python -c "from reportlab.pdfgen import canvas"'
   - 'echo $?'
 
