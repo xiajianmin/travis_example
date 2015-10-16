@@ -16,6 +16,8 @@ install:
   - sudo pip install reportlab
 
 before_script:
+  - 'python setup.py develop'
+
   - 'python -c "from reportlab.pdfgen import canvas"'
   - 'echo $?'
 
@@ -30,7 +32,7 @@ before_script:
   - 'for file in "./"*; do [[ $file = ./web2py ]] && continue; cp -r "$file" "./web2py/applications/travis_example"; done'
   - 'cd web2py'
 
-script: "python setup.py develop && python web2py.py -S travis_example -M -R applications/travis_example/testRunner.py"
+script: python web2py.py -S travis_example -M -R applications/travis_example/testRunner.py
 
 # to use container-based infrastructure. Faster build setup
 # change false to required to use sudo
